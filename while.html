@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador While</title>
+</head>
+<body>
+    <h2>Contador del 1 al 5</h2>
+    <button onclick="contar()">Ejecutar Contador</button>
+    <div id="resultado"></div>
+
+    <script>
+        function contar() {
+            let i = 1;
+            let resultadoHTML = "<h3>Contador:</h3>";
+            
+            while (i <= 5) {
+                resultadoHTML += `<p>Número: ${i}</p>`;
+                i++;
+            }
+            
+            document.getElementById("resultado").innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

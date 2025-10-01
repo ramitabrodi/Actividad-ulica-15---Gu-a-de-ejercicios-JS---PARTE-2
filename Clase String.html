@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminar Aplicación</title>
+</head>
+<body>
+    <h2>Terminar Aplicación</h2>
+    <button onclick="iniciarPrograma()">Iniciar Programa</button>
+    <div id="resultado"></div>
+
+    <script>
+        function iniciarPrograma() {
+            let continuar = true;
+            let mensajes = [];
+            
+            while (continuar) {
+                let entrada = prompt("Ingrese texto (fn, fin o FIN para terminar):");
+                
+                // Convertir a minúsculas y comparar (case insensitive)
+                if (entrada.toLowerCase() === 'fn' || entrada.toLowerCase() === 'fin') {
+                    continuar = false;
+                    mensajes.push("Programa terminado");
+                } else {
+                    mensajes.push(`Texto ingresado: ${entrada}`);
+                }
+            }
+            
+            // Mostrar todos los mensajes
+            document.getElementById("resultado").innerHTML = `
+                <h3>Historial:</h3>
+                ${mensajes.map(msg => `<p>${msg}</p>`).join('')}
+            `;
+        }
+    </script>
+</body>
+</html>

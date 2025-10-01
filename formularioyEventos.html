@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario con Botones</title>
+</head>
+<body>
+    <form>
+        <input type="button" value="1" onclick="mostrarMensaje(1)">
+        <input type="button" value="2" onclick="mostrarMensaje(2)">
+        <input type="button" value="3" onclick="mostrarMensaje(3)">
+    </form>
+    
+    <div id="mensaje"></div>
+
+    <script type="text/javascript">
+        function mostrarMensaje(boton) {
+            document.getElementById("mensaje").innerHTML = 
+                "Se presionó el botón: " + boton;
+        }
+    </script>
+</body>
+</html>

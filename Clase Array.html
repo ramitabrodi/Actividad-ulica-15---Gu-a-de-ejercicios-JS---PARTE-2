@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vector - Elementos > 36</title>
+</head>
+<body>
+    <h2>Vector de 8 Elementos</h2>
+    <button onclick="procesarVector()">Ingresar Vector</button>
+    <div id="resultado"></div>
+
+    <script>
+        function procesarVector() {
+            let vector = [];
+            let mayores36 = [];
+            
+            // Ingresar 8 elementos
+            for (let i = 0; i < 8; i++) {
+                let elemento = parseInt(prompt(`Ingrese elemento ${i + 1}:`));
+                vector.push(elemento);
+                
+                if (elemento > 36) {
+                    mayores36.push(elemento);
+                }
+            }
+            
+            // Mostrar resultados
+            document.getElementById("resultado").innerHTML = `
+                <h3>Resultados:</h3>
+                <p><strong>Vector completo:</strong> [${vector.join(", ")}]</p>
+                <p><strong>Elementos mayores a 36:</strong> [${mayores36.join(", ")}]</p>
+                <p><strong>Cantidad mayores a 36:</strong> ${mayores36.length}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

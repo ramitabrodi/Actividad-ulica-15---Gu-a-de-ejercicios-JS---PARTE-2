@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparar Números</title>
+</head>
+<body>
+    <h2>Comparar Dos Números</h2>
+    
+    <form>
+        <label>Número 1:</label>
+        <input type="text" id="num1"><br><br>
+        
+        <label>Número 2:</label>
+        <input type="text" id="num2"><br><br>
+        
+        <button type="button" onclick="mostrarMayor()">Mostrar Mayor</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarMayor() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("resultado").innerHTML = "<p>Por favor ingrese números válidos</p>";
+                return;
+            }
+            
+            let mayor = Math.max(num1, num2);
+            document.getElementById("resultado").innerHTML = `<p>El número mayor es: ${mayor}</p>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de Visitas</title>
+</head>
+
+<body>
+    <form>
+        Nombre: <input type="text" id="nombre"><br>
+        Email: <input type="text" id="email"><br>
+        Comentarios:<br>
+        <textarea id="comentarios" rows="4" cols="40"></textarea><br>
+        <input type="button" value="Enviar" onclick="mostrarDatos()">
+    </form>
+
+    <script type="text/javascript">
+        function mostrarDatos() {
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let comentarios = document.getElementById("comentarios").value;
+
+            alert("Datos ingresados:\n\n" +
+                "Nombre: " + nombre + "\n" +
+                "Email: " + email + "\n" +
+                "Comentarios: " + comentarios);
+        }
+    </script>
+</body>
+
+</html>

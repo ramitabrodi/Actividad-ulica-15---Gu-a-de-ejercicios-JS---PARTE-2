@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas de Alumnos</title>
+</head>
+<body>
+    <h2>Ingreso de 10 Notas</h2>
+    <button onclick="procesarNotas()">Ingresar Notas</button>
+    <div id="resultado"></div>
+
+    <script>
+        function procesarNotas() {
+            let aprobados = 0;
+            let desaprobados = 0;
+            let contador = 1;
+
+            while (contador <= 10) {
+                let nota = parseFloat(prompt(`Ingrese nota del alumno ${contador} (0-20):`));
+                
+                if (nota >= 0 && nota <= 20) {
+                    if (nota >= 11) {
+                        aprobados++;
+                    } else {
+                        desaprobados++;
+                    }
+                    contador++;
+                } else {
+                    alert("Error: La nota debe estar entre 0 y 20");
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = `
+                <h3>Resultados:</h3>
+                <p><strong>Aprobados:</strong> ${aprobados} alumnos</p>
+                <p><strong>Desaprobados:</strong> ${desaprobados} alumnos</p>
+                <p><strong>Porcentaje de aprobación:</strong> ${(aprobados / 10 * 100).toFixed(1)}%</p>
+            `;
+        }
+    </script>
+</body>
+</html>

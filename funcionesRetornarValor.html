@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mostrar Números entre Dos Valores</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function mostrarNumeros() {
+            let menor = 4;
+            let mayor = 10;
+            let resultado = "";
+            
+            document.write("Número menor: " + menor + "<br>");
+            document.write("Número mayor: " + mayor + "<br>");
+            document.write("Secuencia: ");
+            
+            for(let i = menor; i <= mayor; i++) {
+                resultado += i;
+            }
+            
+            document.write(resultado);
+        }
+        
+        mostrarNumeros();
+    </script>
+</body>
+</html>

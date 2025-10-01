@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deportes que Practica</title>
+</head>
+<body>
+    <form>
+        Seleccione los deportes que practica:<br>
+        <input type="checkbox" id="futbol"> Fútbol<br>
+        <input type="checkbox" id="basquet"> Básquet<br>
+        <input type="checkbox" id="tenis"> Tenis<br>
+        <input type="button" value="Mostrar Deportes" onclick="mostrarDeportes()">
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        function mostrarDeportes() {
+            let deportes = [];
+            
+            if(document.getElementById("futbol").checked) {
+                deportes.push("Fútbol");
+            }
+            if(document.getElementById("basquet").checked) {
+                deportes.push("Básquet");
+            }
+            if(document.getElementById("tenis").checked) {
+                deportes.push("Tenis");
+            }
+            
+            if(deportes.length > 0) {
+                document.getElementById("resultado").innerHTML = 
+                    "Deportes que eligió: " + deportes.join(", ");
+            } else {
+                document.getElementById("resultado").innerHTML = 
+                    "No eligió ningún deporte";
+            }
+        }
+    </script>
+</body>
+</html>

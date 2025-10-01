@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparar dos números</title>
+</head>
+<body>
+    <script>
+        var num1 = parseInt(prompt("Ingrese el primer número:"));
+        var num2 = parseInt(prompt("Ingrese el segundo número:"));
+
+        if (num1 > num2) {
+            var suma = num1 + num2;
+            var diferencia = num1 - num2;
+            document.write("La suma es: " + suma + "<br>");
+            document.write("La diferencia es: " + diferencia);
+        } else {
+            var producto = num1 * num2;
+            var division = num1 / num2;
+            document.write("El producto es: " + producto + "<br>");
+            document.write("La división es: " + division);
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promedio de Notas</title>
+</head>
+<body>
+    <script>
+        var n1 = parseInt(prompt("Ingrese la primera nota:"));
+        var n2 = parseInt(prompt("Ingrese la segunda nota:"));
+        var n3 = parseInt(prompt("Ingrese la tercera nota:"));
+
+        var promedio = (n1 + n2 + n3) / 3;
+
+        document.write("Promedio: " + promedio + "<br>");
+
+        if (promedio >= 4) {
+            document.write("Regular");
+        } else {
+            document.write("Reprobado");
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cantidad de dígitos</title>
+</head>
+<body>
+    <script>
+        var numero = parseInt(prompt("Ingrese un número positivo (1-99):"));
+
+        if (numero < 10) {
+            document.write("El número tiene un dígito");
+        } else {
+            document.write("El número tiene dos dígitos");
+        }
+    </script>
+</body>
+</html>
+

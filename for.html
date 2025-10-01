@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suma Últimos 5</title>
+</head>
+<body>
+    <h2>Suma de los Últimos 5 Números</h2>
+    <button onclick="calcularSuma()">Ingresar Números</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSuma() {
+            let suma = 0;
+            for (let i = 1; i <= 10; i++) {
+                let num = parseFloat(prompt(`Número ${i}:`));
+                if (i > 5) suma += num;
+            }
+            document.getElementById("resultado").innerHTML = `
+                <h3>Resultado:</h3>
+                <p>La suma de los últimos 5 números es: ${suma}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

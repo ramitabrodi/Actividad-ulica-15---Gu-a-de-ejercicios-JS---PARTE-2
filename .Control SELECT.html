@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Examen Multiple Choice</title>
+</head>
+<body>
+    <h2>Examen Multiple Choice</h2>
+    
+    <form>
+        <!-- Pregunta 1 -->
+        <p><strong>1. ¿Cuál es la capital de Francia?</strong></p>
+        <select id="pregunta1">
+            <option value="">Seleccione respuesta</option>
+            <option value="madrid">Madrid</option>
+            <option value="paris">París</option>
+            <option value="roma">Roma</option>
+            <option value="berlin">Berlín</option>
+        </select>
+        <br><br>
+        
+        <!-- Pregunta 2 -->
+        <p><strong>2. ¿Cuántos lados tiene un triángulo?</strong></p>
+        <select id="pregunta2">
+            <option value="">Seleccione respuesta</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br><br>
+        
+        <!-- Pregunta 3 -->
+        <p><strong>3. ¿Qué lenguaje se usa para estilizar páginas web?</strong></p>
+        <select id="pregunta3">
+            <option value="">Seleccione respuesta</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+        </select>
+        <br><br>
+        
+        <!-- Pregunta 4 -->
+        <p><strong>4. ¿Cuál de estos no es un sistema operativo?</strong></p>
+        <select id="pregunta4">
+            <option value="">Seleccione respuesta</option>
+            <option value="windows">Windows</option>
+            <option value="linux">Linux</option>
+            <option value="photoshop">Photoshop</option>
+            <option value="macos">macOS</option>
+        </select>
+        <br><br>
+        
+        <button type="button" onclick="calcularResultado()">Calcular Resultado</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularResultado() {
+            let correctas = 0;
+            let incorrectas = 0;
+            
+            // Respuestas correctas
+            const respuestasCorrectas = {
+                pregunta1: "paris",
+                pregunta2: "3",
+                pregunta3: "css",
+                pregunta4: "photoshop"
+            };
+            
+            // Verificar cada pregunta
+            for (let i = 1; i <= 4; i++) {
+                let seleccion = document.getElementById(`pregunta${i}`).value;
+                let correcta = respuestasCorrectas[`pregunta${i}`];
+                
+                if (seleccion === correcta) {
+                    correctas++;
+                } else if (seleccion !== "") {
+                    incorrectas++;
+                }
+            }
+            
+            // Mostrar resultado
+            document.getElementById("resultado").innerHTML = `
+                <h3>Resultado:</h3>
+                <p><strong>Respuestas correctas:</strong> ${correctas}</p>
+                <p><strong>Respuestas incorrectas:</strong> ${incorrectas}</p>
+                <p><strong>Sin responder:</strong> ${4 - (correctas + incorrectas)}</p>
+                <p><strong>Puntaje:</strong> ${correctas}/4</p>
+            `;
+        }
+    </script>
+</body>
+</html>

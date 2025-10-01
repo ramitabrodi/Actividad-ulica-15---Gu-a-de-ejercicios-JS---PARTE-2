@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1 - Acumulador de Valores</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let acumulador = 0;
+        let valor;
+        
+        document.write("Ingrese valores (9999 para terminar):<br>");
+        
+        // Simulamos ingresos de valores
+        valor = 10;
+        document.write("Valor ingresado: " + valor + "<br>");
+        if(valor != 9999) acumulador += valor;
+        
+        valor = 20;
+        document.write("Valor ingresado: " + valor + "<br>");
+        if(valor != 9999) acumulador += valor;
+        
+        valor = -5;
+        document.write("Valor ingresado: " + valor + "<br>");
+        if(valor != 9999) acumulador += valor;
+        
+        valor = 9999;
+        document.write("Valor ingresado: " + valor + " (FIN)<br><br>");
+        
+        document.write("Valor acumulado: " + acumulador + "<br>");
+        
+        if(acumulador == 0) {
+            document.write("El valor acumulado es CERO");
+        } else if(acumulador > 0) {
+            document.write("El valor acumulado es MAYOR A CERO");
+        } else {
+            document.write("El valor acumulado es MENOR A CERO");
+        }
+    </script>
+</body>
+</html>

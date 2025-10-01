@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Función Saludar</title>
+</head>
+<body>
+    <h2>Función para Saludar</h2>
+    <button onclick="saludarInteractivo()">Saludar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function saludar(nombre) {
+            return `¡Hola ${nombre}! Bienvenido/a.`;
+        }
+
+        function saludarConRetorno(nombre) {
+            return `¡Hola ${nombre}! Es un placer verte.`;
+        }
+
+        function saludarCompleto(nombre, apellido = "", edad = "") {
+            if (apellido && edad) {
+                return `¡Hola ${nombre} ${apellido}! Tienes ${edad} años.`;
+            } else if (apellido) {
+                return `¡Hola ${nombre} ${apellido}!`;
+            } else {
+                return `¡Hola ${nombre}!`;
+            }
+        }
+
+        function saludarInteractivo() {
+            let nombre = prompt("¿Cuál es tu nombre?");
+            if (nombre && nombre.trim() !== "") {
+                let saludo = saludarConRetorno(nombre);
+                document.getElementById("resultado").innerHTML = `
+                    <h3>Saludo:</h3>
+                    <p>${saludo}</p>
+                    <hr>
+                    <p><strong>Otras versiones:</strong></p>
+                    <p>${saludar(nombre)}</p>
+                    <p>${saludarCompleto(nombre)}</p>
+                    <p>${saludarCompleto(nombre, "Pérez")}</p>
+                    <p>${saludarCompleto(nombre, "Pérez", "25")}</p>
+                `;
+            } else {
+                alert("Por favor ingresa un nombre válido");
+            }
+        }
+    </script>
+</body>
+</html>

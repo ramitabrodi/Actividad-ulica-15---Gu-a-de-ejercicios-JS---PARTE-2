@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tres Valores</title>
+</head>
+<body>
+    <h2>Verificar Tres Valores</h2>
+    <button onclick="verificarValores()">Ingresar Valores</button>
+    <div id="resultado"></div>
+
+    <script>
+        function verificarValores() {
+            let valor1 = parseFloat(prompt("Ingrese el primer valor:"));
+            let valor2 = parseFloat(prompt("Ingrese el segundo valor:"));
+            let valor3 = parseFloat(prompt("Ingrese el tercer valor:"));
+
+            if (valor1 === valor2) {
+                if (valor2 === valor3) {
+                    let suma = valor1 + valor2;
+                    let resultado = suma * valor3;
+                    
+                    document.getElementById("resultado").innerHTML = `
+                        <h3>Resultado:</h3>
+                        <p>Todos los valores son iguales: ${valor1}</p>
+                        <p>(${valor1} + ${valor2}) × ${valor3} = ${resultado}</p>
+                    `;
+                } else {
+                    document.getElementById("resultado").innerHTML = "<p>Los valores no son todos iguales</p>";
+                }
+            } else {
+                document.getElementById("resultado").innerHTML = "<p>Los valores no son todos iguales</p>";
+            }
+        }
+    </script>
+</body>
+</html>

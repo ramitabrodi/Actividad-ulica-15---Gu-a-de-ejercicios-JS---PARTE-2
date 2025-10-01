@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Edad</title>
+</head>
+<body>
+    <h2>¿Es mayor de 18 años?</h2>
+    
+    <form>
+        <p><strong>Seleccione su edad:</strong></p>
+        
+        <input type="radio" id="menor" name="edad" value="menor">
+        <label for="menor">Menor de 18 años</label><br>
+        
+        <input type="radio" id="mayor" name="edad" value="mayor">
+        <label for="mayor">Mayor de 18 años</label><br><br>
+        
+        <button type="button" onclick="verificarEdad()">Verificar</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function verificarEdad() {
+            let opcionSeleccionada = document.querySelector('input[name="edad"]:checked');
+            
+            if (!opcionSeleccionada) {
+                alert("Por favor seleccione una opción");
+                return;
+            }
+            
+            if (opcionSeleccionada.value === "mayor") {
+                alert("Puede ingresar - Es mayor de 18 años");
+                document.getElementById("resultado").innerHTML = "<p style='color: green;'>✅ Acceso permitido - Mayor de 18 años</p>";
+            } else {
+                alert("No puede ingresar - Es menor de 18 años");
+                document.getElementById("resultado").innerHTML = "<p style='color: red;'>❌ Acceso denegado - Menor de 18 años</p>";
+            }
+        }
+    </script>
+</body>
+</html>
